@@ -31,11 +31,11 @@ export const Products = ({ name, weight, price, fDate, lDate }: Props) => {
                 </div>
                 <div className="flex-8 flex-col flex text-xl font-black">
                   <div className="flex-1 flex justify-center items-center">
-                    <span className="font-black">{name}</span>
+                    <span className="font-black text-3xl">{name}</span>
                   </div>
                   <div className="flex-1 flex justify-between items-center">
-                    <span className="ml-2">{`${weight}g`}</span>
-                    <span className="mr-2">{`R$${price},00`}</span>
+                    <span className="ml-2 text-2xl">{`${weight}g`}</span>
+                    <span className="mr-2 text-2xl">{`R$${price},00`}</span>
                   </div>
                 </div>
              </div>
