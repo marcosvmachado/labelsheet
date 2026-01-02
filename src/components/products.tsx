@@ -8,11 +8,57 @@ type Props = {
   lDate?: string
 }
 
+const tempero = "bg-[#147f0c]"
+const doce = "bg-[#fea50d]"
+
+const pimenta = false
+
 export const Products = ({ name, weight, price, fDate, lDate }: Props) => {
   return (
-     <div className="h-screen w-screen flex justify-center items-center">
-      <div
-         className="text-black bg-[#147f0c] font-bold"
+     
+     
+     <div className="h-screen w-screen flex justify-center items-center text-white">
+    {pimenta ?  
+        <div
+         className={`${tempero} font-black`}
+         style={{
+           width: "257mm",   // largura real da etiqueta
+           height: "75.8mm",  // altura real da etiqueta
+         }}
+       >
+         <div className="w-[100%] h-[100%] flex flex-col justify-center items-center">
+            <div className="w-[95%] h-[90%] flex justify-center items-center border-4">
+
+              <div className="w-full h-full flex flex-col">
+                <div className="flex-1 flex  items-center bg-[#1d3e17]">
+                  <div className="relative">
+                    <Image
+                    src="/assets/sim.png"
+                    alt=""
+                    width={120}
+                    height={120}
+                    className="object-cover"
+                    />
+                  </div>
+                  <span className="text-6xl ml-40">JURUBEBA</span>
+                </div>
+                <div className="flex-1 flex text-3xl bg-[#1d3e17]">
+                  <div className="flex-1 flex flex-col justify-center items-center text-">
+                    <span>PESO LÍQUIDO: 500ML</span>
+                    <span className="mt-5">FABRIC: 12/2025</span>
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center items-center">
+                    <span>PESO DRENADO: 350ML</span>
+                    <span className="mt-5">VAL: 12/2027</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+         </div>
+       </div> 
+       : 
+       <div
+         className={`text-black ${tempero} font-bold`}
          style={{
            width: "127mm",   // largura real da etiqueta
            height: "50.8mm",  // altura real da etiqueta
@@ -31,7 +77,7 @@ export const Products = ({ name, weight, price, fDate, lDate }: Props) => {
                 </div>
                 <div className="flex-8 flex-col flex text-xl font-black">
                   <div className="flex-1 flex justify-center items-center">
-                    <span className="font-black text-3xl">{name}</span>
+                    <span className="font-black text-3xl ">{name}</span>
                   </div>
                   <div className="flex-1 flex justify-between items-center">
                     <span className="ml-2 text-2xl">{`${weight}g`}</span>
@@ -57,44 +103,8 @@ export const Products = ({ name, weight, price, fDate, lDate }: Props) => {
            </div>
          </div>
        </div>
+       }
      </div>
      
-    /* 
-    <div className="h-screen w-screen flex justify-center items-center">
-      <div
-        className="text-white bg-[#FF1A1A] font-black"
-        style={{
-          width: "127mm",   // largura real da etiqueta
-          height: "50.8mm",  // altura real da etiqueta
-        }}
-      >
-        <div className="w-20 h-20 relative">
-          <Image
-            src="/assets/sim.png"
-            alt=""
-            fill
-            className="object-cover mt-3 ml-3"
-          />
-          <div className="w-full h-full absolute flex justify-center "
-            style={{
-              width: "127mm", 
-              height: "50.8mm",  
-            }}
-          >
-            <div className="w-[75%] h-full flex flex-col text-center">
-              <span className="text-3xl mt-2">{name}</span>
-              <span className="my-1 text-2xl">{`${weight}g`}</span>
-              <span className="mb-1 text-2xl">{`R$${price},00`}</span>
-              <span>{`Fab. ${fDate}`}</span>
-              <span>{`Venc. ${lDate}`}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-*/
-
-
-
   );
 };
