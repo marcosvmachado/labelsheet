@@ -1,32 +1,18 @@
 "use client"
 
 import { useLabelContext } from "@/contexts/LabelContext"
-import { category, temperos } from "@/data/data"
+import { category, fDate, lDate, seasoning } from "@/data/data"
+import { Seasoning } from "@/types/seasoning"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
-    type Item = {
-        name: string
-        weight: string
-        price: string
-    }
-
-    const date = new Date
-    const month = date.getMonth() 
-    const year = date.getFullYear()
-    const fDate = `0${date.getMonth() + 1}/${year}`
-    const lDate = `0${date.getMonth() + 1}/${year + 2}`
-
 export const Label = () => {
     
-    
-
     const labelCtx = useLabelContext()
-    
     
     const [categoryValue, setCategoryValue] = useState("")
     const [item, setItem] = useState("")
-    const [object, setObject] = useState<Item>()
+    const [object, setObject] = useState<Seasoning>()
     
     useEffect(() => {
         if(item) {
@@ -47,11 +33,9 @@ export const Label = () => {
     const router = useRouter()
 
     const handleGenerateButton = () => {
-        
-        console.log(labelCtx?.name)
-        
-        
+                       
         router.push("/products")
+
       }
 
     return (
@@ -81,7 +65,7 @@ export const Label = () => {
                                 <option value="">Selecione o produto:</option>
                                 {
                                     categoryValue === "TEMPERO" && 
-                                    temperos.map((item, index) => (
+                                    seasoning.map((item, index) => (
                                         <option key={index} value={JSON.stringify(item)}>{item.name}</option>
                                     ))
                                 }

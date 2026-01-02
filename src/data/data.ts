@@ -1,4 +1,8 @@
-
+const date = new Date
+const month = date.getMonth() 
+const year = date.getFullYear()
+export const fDate = `0${date.getMonth() + 1}/${year}`
+export const lDate = `0${date.getMonth() + 1}/${year + 2}`
 
 export const category = ["TEMPERO","DOCE", "PIMENTA"]
 
@@ -6,7 +10,7 @@ export const doces = [
     {}
 ]
 
-export const temperos = [
+export const seasoning = [
     {name: "Camomila", weight: "60", price: "10"},
     {name: "Cavalinha", weight: "50", price: "10"},
     {name: "Chia semente", weight: "100", price: "9"},
