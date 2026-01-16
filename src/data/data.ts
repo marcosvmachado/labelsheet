@@ -14,6 +14,7 @@ export const seasoning = [
     {name: "Ana Maria", weight: "100", price: "8"},
     {name: "Alecrim", weight: "60", price: "8"},
     {name: "Anis-estrelado", weight: "40", price: "10"},
+    {name: "Alho, Salsa, Cebola", weight: "80", price: "8"},
     {name: "Barbatimão", weight: "100", price: "8"},
     {name: "Camomila", weight: "60", price: "10"},
     {name: "Cavalinha", weight: "50", price: "10"},
