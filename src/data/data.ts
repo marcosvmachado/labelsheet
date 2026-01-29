@@ -40,6 +40,7 @@ export const seasoning = [
     {name: "Guaco", weight: "60", price: "10"},
     {name: "Guaraná Pó", weight: "100", price: "9"},
     {name: "Hibisco", weight: "80", price: "12"},
+    {name: "Louro", weight: "30", price: "9"},
     {name: "Linhaça Dourada", weight: "100", price: "8"},
     {name: "Linhaça Marrom", weight: "100", price: "8"},
     {name: "Lemon Pepper", weight: "100", price: "8"},
