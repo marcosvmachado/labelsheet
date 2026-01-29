@@ -1,7 +1,7 @@
 const date = new Date
 const month = date.getMonth() 
 const year = date.getFullYear()
-export const fDate = `0${date.getMonth() + 1}/${year}`
+export const fDate = `0${date.getMonth() + 2}/${year}`
 export const lDate = `0${date.getMonth() + 1}/${year + 2}`
 
 export const category = ["TEMPERO","DOCE", "PIMENTA"]
@@ -43,12 +43,11 @@ export const seasoning = [
     {name: "Linhaça Dourada", weight: "100", price: "8"},
     {name: "Linhaça Marrom", weight: "100", price: "8"},
     {name: "Lemon Pepper", weight: "100", price: "8"},
-    {name: "Mulungu", weight: "50", price: "9"},
+    {name: "Mulungu", weight: "50", price: "8"},
     {name: "Maca Peruana", weight: "100", price: "17"},
     {name: "Macela", weight: "50", price: "9"},
     {name: "Melissa", weight: "60", price: "9"},
     {name: "Moringa Pó", weight: "100", price: "20"},
-    {name: "Mulungu", weight: "100", price: "8"},
     {name: "Mulungu", weight: "100", price: "8"},
     {name: "Orégano", weight: "30", price: "8"},
     {name: "Passiflora", weight: "60", price: "9"},
