@@ -52,6 +52,7 @@ export const seasoning = [
     {name: "Orégano", weight: "30", price: "8"},
     {name: "Passiflora", weight: "60", price: "9"},
     {name: "Páprica Doce", weight: "100", price: "7"},
+    {name: "Pau Tenente", weight: "50", price: "8"},
     {name: "Pega Marido", weight: "80", price: "8"},
     {name: "Pega Esposa", weight: "80", price: "8"},
     {name: "Páprica Picante", weight: "100", price: "7"},
@@ -61,8 +62,7 @@ export const seasoning = [
     {name: "Quebra-Pedra", weight: "80", price: "15"},
     {name: "Tempera Tudo", weight: "100", price: "8"},
     {name: "Unha de Gato", weight: "60", price: "9"},
-    {name: "Sene", weight: "60", price: "8"},
-    {name: "Pau Tenente", weight: "50", price: "8"},
+    {name: "Sene", weight: "60", price: "8"}
     
 ]
 
