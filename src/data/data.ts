@@ -2,7 +2,7 @@ const date = new Date
 const month = date.getMonth() 
 const year = date.getFullYear()
 export const fDate = `0${date.getMonth() + 2}/${year}`
-export const lDate = `0${date.getMonth() + 1}/${year + 2}`
+export const lDate = `0${date.getMonth() + 2}/${year + 2}`
 
 export const category = ["TEMPERO","DOCE", "PIMENTA"]
 
