@@ -56,6 +56,7 @@ export const seasoning = [
     {name: "Melissa", weight: "60", price: "9"},
     {name: "Mostarda Pó", weight: "100", price: "8"},
     {name: "Moringa Pó", weight: "100", price: "20"},
+    {name: "Molho Tartaro", weight: "80", price: "9"},
     {name: "Mulungu", weight: "100", price: "8"},
     {name: "Orégano", weight: "30", price: "8"},
     {name: "Passiflora", weight: "60", price: "9"},
