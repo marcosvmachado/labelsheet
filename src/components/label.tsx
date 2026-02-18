@@ -1,18 +1,35 @@
 "use client"
 
 import { useLabelContext } from "@/contexts/LabelContext"
-import { category, fDate, lDate, seasoning } from "@/data/data"
+import { category, doces, pimentas, seasoning } from "@/data/data"
 import { Seasoning } from "@/types/seasoning"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
 export const Label = () => {
-    
+  
     const labelCtx = useLabelContext()
     
     const [categoryValue, setCategoryValue] = useState("")
     const [item, setItem] = useState("")
     const [object, setObject] = useState<Seasoning>()
+
+    const [fDate, setfDate] = useState('')
+    const [lDate, setlDate] = useState('')
+
+    const date = new Date
+    const month = date.getMonth() 
+    const year = date.getFullYear()
+
+    useEffect(() => {
+        if(categoryValue === "DOCE"){
+            setfDate(`0${date.getMonth() + 1}/${year}`)
+            setlDate(`0${date.getMonth() + 4}/${year}`)
+        } else if(categoryValue === "TEMPERO"){
+            setfDate(`0${date.getMonth() + 1}/${year}`)
+            setlDate(`0${date.getMonth() + 1}/${year + 2}`)
+        }
+    },[categoryValue])
     
     useEffect(() => {
         if(item) {
@@ -27,6 +44,7 @@ export const Label = () => {
            labelCtx?.setPrice(object.price)
            labelCtx?.setFDate(fDate)
            labelCtx?.setLDate(lDate)
+           labelCtx?.setItemSelected(categoryValue)
         }
     },[object])
 
@@ -35,6 +53,7 @@ export const Label = () => {
     const handleGenerateButton = () => {
                        
         router.push("/products")
+        console.log(labelCtx?.itemSelected)
 
       }
 
@@ -66,6 +85,18 @@ export const Label = () => {
                                 {
                                     categoryValue === "TEMPERO" && 
                                     seasoning.map((item, index) => (
+                                        <option key={index} value={JSON.stringify(item)}>{item.name}</option>
+                                    ))
+                                }
+                                {
+                                    categoryValue === "DOCE" &&
+                                    doces.map((item, index) => (
+                                        <option key={index} value={JSON.stringify(item)}>{item.name}</option>
+                                    ))
+                                }
+                                {
+                                    categoryValue === "PIMENTA" &&
+                                    pimentas.map((item, index) => (
                                         <option key={index} value={JSON.stringify(item)}>{item.name}</option>
                                     ))
                                 }

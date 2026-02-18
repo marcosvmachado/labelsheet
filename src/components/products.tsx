@@ -6,19 +6,19 @@ type Props = {
   price?: string
   fDate?: string
   lDate?: string
+  itemSelected?: string
 }
 
 const tempero = "bg-[#147f0c]"
 const doce = "bg-[#fea50d]"
 
-const pimenta = false
 
-export const Products = ({ name, weight, price, fDate, lDate }: Props) => {
+export const Products = ({ name, weight, price, fDate, lDate, itemSelected }: Props) => {
   return (
      
      
      <div className="h-screen w-screen flex justify-center items-center text-white">
-    {pimenta ?  
+    { itemSelected === "PIMENTA" &&  
         <div
          className={`${tempero} font-black`}
          style={{
@@ -56,7 +56,8 @@ export const Products = ({ name, weight, price, fDate, lDate }: Props) => {
             </div>
          </div>
        </div> 
-       : 
+        } 
+       {itemSelected === "TEMPERO" &&      
        <div
          className={`text-black ${tempero} font-bold`}
          style={{
@@ -81,6 +82,53 @@ export const Products = ({ name, weight, price, fDate, lDate }: Props) => {
                   </div>
                   <div className="flex-1 flex justify-between items-center">
                     <span className="ml-2 text-2xl">{`${weight}g`}</span>
+                    <span className="mr-2 text-2xl">{`R$${price},00`}</span>
+                  </div>
+                </div>
+             </div>
+           </div>
+           <div className="flex-2 flex">
+             <div className="flex-9 flex flex-col justify-center items-center text-[16pt]">
+               <span className="text-white">FAB:</span>
+               <div className="w-[90%] h-[45%] flex justify-center items-center bg-white">
+                 <span>{fDate}</span>
+               </div>
+             </div>
+             <div className="flex-2"></div>
+             <div className="flex-9 flex flex-col justify-center items-center text-[16pt]">
+               <span className="text-white"> VAL:</span>
+               <div className="w-[90%] h-[45%] flex justify-center items-center bg-white">
+                 <span>{lDate}</span>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       }
+       {itemSelected === "DOCE" &&
+       <div
+         className={`text-black ${doce} font-bold`}
+         style={{
+           width: "127mm",   // largura real da etiqueta
+           height: "50.8mm",  // altura real da etiqueta
+         }}
+       >
+         <div className="w-[100%] h-[100%] flex flex-col">
+           <div className="flex-3 flex justify-center items-center">
+             <div className="w-[95%] h-[75%] bg-white flex justify-between p-[0.5mm]">
+                <div className="flex-2 relative">
+                  <Image
+                  src="/assets/sim.png"
+                  alt="deu ruim"
+                  fill
+                  className="object-cover"
+                  />
+                </div>
+                <div className="flex-8 flex-col flex text-xl font-black">
+                  <div className="flex-1 flex justify-center items-center">
+                    <span className="font-black text-3xl ">{name}</span>
+                  </div>
+                  <div className="flex-1 flex justify-between items-center">
                     <span className="mr-2 text-2xl">{`R$${price},00`}</span>
                   </div>
                 </div>

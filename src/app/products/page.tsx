@@ -13,7 +13,7 @@ export default function ProductsPage() {
                     price={labelCtx?.price}
                     fDate={labelCtx?.fDate}
                     lDate={labelCtx?.lDate}
-        
+                    itemSelected={labelCtx?.itemSelected}
         />
     )
 }

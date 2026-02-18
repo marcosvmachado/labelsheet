@@ -8,11 +8,13 @@ type LabelContextType = {
     price: string
     fDate: string
     lDate: string
+    itemSelected: string
     setName: (i: string) => void
     setWeight: (i: string) => void
     setPrice: (i: string) => void
     setFDate: (i: string) => void
     setLDate: (i: string) => void
+    setItemSelected: (i: string) => void
 }
 
 export const LabelContext = createContext<null | LabelContextType>(null)
@@ -23,11 +25,12 @@ export const LabelProvider = ( {children}: {children: ReactNode} ) => {
     const [weight, setWeight] = useState('')
     const [price, setPrice] = useState('')
     const [fDate, setFDate] = useState('')
-    const [lDate, setLDate] = useState('')   
+    const [lDate, setLDate] = useState('') 
+    const [itemSelected, setItemSelected] = useState('')  
         
     
     return (
-    <LabelContext.Provider value={ { name, setName, weight, setWeight, price, setPrice, fDate, setFDate, lDate, setLDate } }>
+    <LabelContext.Provider value={ { name, setName, weight, setWeight, price, setPrice, fDate, setFDate, lDate, setLDate, itemSelected, setItemSelected } }>
         {children}
     </LabelContext.Provider>
     )
